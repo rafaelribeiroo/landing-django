@@ -31,7 +31,7 @@ body {
 
 .slideshow .slider > * {
 	font-size: 1rem;
-	display: inline-block;
+	display: inline-flex;
 	white-space: normal;
 	vertical-align: top;
 	height: 100%;
@@ -103,19 +103,19 @@ body {
 	background: rgba(255, 255, 255, 0.7) !important;
 }
 
-.slideshow >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+.slideshow > s:target ~ .bullets > * {      background: rgba(255, 255, 255, 0.5);}
 
-#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
-#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
-#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
-#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s1:target ~ .bullets > *:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets > *:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets > *:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets > *:nth-child(4) {background: rgba(255, 255, 255,   1);}
 
-.slideshow >s:target ~ .prevNext >* {      visibility: hidden;}
+.slideshow >s:target ~ .prevNext > * { visibility: hidden;}
 
-#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
-#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
-#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
-#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s1:target ~ .prevNext > *:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext > *:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext > *:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext > *:nth-child(4) {visibility: visible;}
 
 #s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
 #s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
@@ -127,12 +127,20 @@ body {
 	text-align: center;
 }
 
-.slideshow .slider h2 {
-	margin-top: 40vh;
+.slideshow .slider figcaption {
+	position: absolute;
+	margin-top: 20vh;
 	font-weight: 200;
 	letter-spacing: -0.06em;
 	word-spacing: 0.2em;
 	font-size: 3em;
+	color: black
+}
+
+.slideshow .slider .img-responsive {
+	width: 100%;
+	height: auto;
+
 }
 
 .slideshow a {
