@@ -1,76 +1,47 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-	<title>Gerador de Landing Pages || iClinic</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="https://media.lovemondays.com.br/logos/d96a99/iclinic-1-original.png">
-	<link rel="stylesheet" href='{% static "css/reset.css" %}'>
-	<link rel="stylesheet" href='{% static "css/estilos.css" %}'>
-	<!-- Icons -->
-	<link rel="SHORTCUT ICON" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/favicon.ico"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-precomposed.png">
-	<link rel="apple-touch-icon" sizes="57x57" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/favicon-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/favicon-160x160.png" sizes="160x160">
-	<link rel="icon" type="image/png" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="https://d1ydp7gtfj5fb9.cloudfront.net/static/img/favicon/favicon-32x32.png" sizes="32x32">
-	<meta name="msapplication-TileColor" content="#2b5797">
-	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-</head>
-<body>
+{% extends "base.html" %}
 
-	<div class="CSSgal">
+{% block title %}
+	Página Principal || iClinic
+{% endblock %}
 
-		<!-- Don't wrap targets in parent -->
-		<s id="s1"></s> 
-		<s id="s2"></s>
-		<s id="s3"></s>
-		<s id="s4"></s>
+{% block content %}
+<div class="CSSgal">
 
-		<div class="slider">
-			<figure style="background:#5b8;">
-				<h2>PURE <b>CSS</b> SLIDESHOW</h2>
-				<p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
-			</figure>
-			<figure style="background:url('https://www.infoescola.com/wp-content/uploads/2013/08/sol.jpg');">
-				<h2>Slide 2</h2>
-			</figure>
-			<figure style="background:#e95;">
-				<h2>Slide 3</h2>
-			</figure>
-			<figure style="background:#e59;">
-				<h2>Slide 4</h2>
-			</figure>
-		</div>
+	<!-- Don't wrap targets in parent -->
+	<s id="s1"></s> 
+	<s id="s2"></s>
+	<s id="s3"></s>
+	<s id="s4"></s>
 
-		<div class="prevNext">
-			<div><a href="#s4"></a><a href="#s2"></a></div>
-			<div><a href="#s1"></a><a href="#s3"></a></div>
-			<div><a href="#s2"></a><a href="#s4"></a></div>
-			<div><a href="#s3"></a><a href="#s1"></a></div>
-		</div>
-
-		<div class="bullets">
-			<a href="#s1">1</a>
-			<a href="#s2">2</a>
-			<a href="#s3">3</a>
-			<a href="#s4">4</a>
-		</div>
-
+	<div class="slider">
+		<figure style="background:#5b8;">
+			<h2>PURE <b>CSS</b> SLIDESHOW</h2>
+			<p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
+		</figure>
+		<figure style="background:url('https://www.infoescola.com/wp-content/uploads/2013/08/sol.jpg');">
+			<h2>Slide 2</h2>
+		</figure>
+		<figure style="background:#e95;">
+			<h2>Slide 3</h2>
+		</figure>
+		<figure style="background:#e59;">
+			<h2>Slide 4</h2>
+		</figure>
 	</div>
-  
-  
 
-</body>
+	<div class="prevNext">
+		<div><a href="#s4"></a><a href="#s2"></a></div>
+		<div><a href="#s1"></a><a href="#s3"></a></div>
+		<div><a href="#s2"></a><a href="#s4"></a></div>
+		<div><a href="#s3"></a><a href="#s1"></a></div>
+	</div>
 
-</html>
+	<div class="bullets">
+		<a href="#s1">1</a>
+		<a href="#s2">2</a>
+		<a href="#s3">3</a>
+		<a href="#s4">4</a>
+	</div>
+
+</div>
+{% endblock %}
