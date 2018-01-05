@@ -5,43 +5,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="CSSgal">
+	<header class="slideshow">
+		<!-- Don't wrap targets in parent -->
+		<span id="s1"></span> 
+		<span id="s2"></span>
+		<span id="s3"></span>
+		<span id="s4"></span>
 
-	<!-- Don't wrap targets in parent -->
-	<s id="s1"></s> 
-	<s id="s2"></s>
-	<s id="s3"></s>
-	<s id="s4"></s>
+		<section class="slider">
+			<figure style="background:#5b8;">
+				<h2>PURE <b>CSS</b> SLIDESHOW</h2>
+				<p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
+			</figure>
+			<figure style="background:url('https://www.infoescola.com/wp-content/uploads/2013/08/sol.jpg');">
+				<h2>Slide 2</h2>
+			</figure>
+			<figure style="background:#e95;">
+				<h2>Slide 3</h2>
+			</figure>
+			<figure style="background:#e59;">
+				<h2>Slide 4</h2>
+			</figure>
+		</section>
 
-	<div class="slider">
-		<figure style="background:#5b8;">
-			<h2>PURE <b>CSS</b> SLIDESHOW</h2>
-			<p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
-		</figure>
-		<figure style="background:url('https://www.infoescola.com/wp-content/uploads/2013/08/sol.jpg');">
-			<h2>Slide 2</h2>
-		</figure>
-		<figure style="background:#e95;">
-			<h2>Slide 3</h2>
-		</figure>
-		<figure style="background:#e59;">
-			<h2>Slide 4</h2>
-		</figure>
-	</div>
+		<section class="prevNext">
+			<article><a href="#s4"></a><a href="#s2"></a></article>
+			<article><a href="#s1"></a><a href="#s3"></a></article>
+			<article><a href="#s2"></a><a href="#s4"></a></article>
+			<article><a href="#s3"></a><a href="#s1"></a></article>
+		</section>
 
-	<div class="prevNext">
-		<div><a href="#s4"></a><a href="#s2"></a></div>
-		<div><a href="#s1"></a><a href="#s3"></a></div>
-		<div><a href="#s2"></a><a href="#s4"></a></div>
-		<div><a href="#s3"></a><a href="#s1"></a></div>
-	</div>
+		<section class="bullets">
+			<a href="#s1">1</a>
+			<a href="#s2">2</a>
+			<a href="#s3">3</a>
+			<a href="#s4">4</a>
+		</section>
 
-	<div class="bullets">
-		<a href="#s1">1</a>
-		<a href="#s2">2</a>
-		<a href="#s3">3</a>
-		<a href="#s4">4</a>
-	</div>
-
-</div>
+	</header>
 {% endblock %}

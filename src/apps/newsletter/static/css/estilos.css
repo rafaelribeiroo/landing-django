@@ -1,13 +1,18 @@
-*{box-sizing: border-box; -webkit-box-sizing: border-box; }
-html, body { height: 100%; }
-body { margin: 0; font: 16px/1.3 sans-serif; }
+* {
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+}
 
-/*
-PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
-http://stackoverflow.com/a/34696029/383904
-*/
+html, body { 
+	height: 100%; 
+}
 
-.CSSgal {
+body { 
+	margin: 0; 
+	font: 16px/1.3 sans-serif; 
+}
+
+.slideshow {
 	position: relative;
 	overflow: hidden;
 	height: 100%; /* Or set a fixed height */
@@ -15,7 +20,7 @@ http://stackoverflow.com/a/34696029/383904
 
 /* SLIDER */
 
-.CSSgal .slider {
+.slideshow .slider {
 	height: 50%;
 	white-space: nowrap;
 	font-size: 0;
@@ -24,7 +29,7 @@ http://stackoverflow.com/a/34696029/383904
 
 /* SLIDES */
 
-.CSSgal .slider > * {
+.slideshow .slider > * {
 	font-size: 1rem;
 	display: inline-block;
 	white-space: normal;
@@ -37,7 +42,7 @@ http://stackoverflow.com/a/34696029/383904
 
 /* PREV/NEXT, CONTAINERS & ANCHORS */
 
-.CSSgal .prevNext {
+.slideshow .prevNext {
 	position: absolute;
 	z-index: 999;
 	top: 50%;
@@ -45,11 +50,11 @@ http://stackoverflow.com/a/34696029/383904
 	height: 0;
 }
 
-.CSSgal .prevNext > div+div {
+.slideshow .prevNext > article+article {
 	visibility: hidden; /* Hide all but first P/N container */
 }
 
-.CSSgal .prevNext a {
+.slideshow .prevNext a {
 	background: #333;
 	position: absolute;
 	width:       60px;
@@ -63,24 +68,24 @@ http://stackoverflow.com/a/34696029/383904
 					transform: translateY(-50%);
 	left: 0;
 }
-.CSSgal .prevNext a:hover {
+.slideshow .prevNext a:hover {
 	opacity: 1;
 }
-.CSSgal .prevNext a+a {
+.slideshow .prevNext a+a {
 	left: auto;
 	right: 0;
 }
 
 /* NAVIGATION */
 
-.CSSgal .bullets {
+.slideshow .bullets {
 	position: absolute;
 	z-index: 2;
 	padding: 10px 0;
 	width: 100%;
 	text-align: center;
 }
-.CSSgal .bullets > a {
+.slideshow .bullets > a {
 	display: inline-block;
 	width:       30px;
 	height:      30px;
@@ -91,21 +96,21 @@ http://stackoverflow.com/a/34696029/383904
 	-webkit-transition: 0.3s;
 					transition: 0.3s;
 }
-.CSSgal .bullets > a+a {
+.slideshow .bullets > a+a {
 	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
 }
-.CSSgal .bullets > a:hover {
+.slideshow .bullets > a:hover {
 	background: rgba(255, 255, 255, 0.7) !important;
 }
 
-.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+.slideshow >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
 
 #s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
 #s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
 #s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
 #s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
 
-.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+.slideshow >s:target ~ .prevNext >* {      visibility: hidden;}
 
 #s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
 #s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
@@ -117,12 +122,12 @@ http://stackoverflow.com/a/34696029/383904
 #s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
 #s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
 
-.CSSgal{
+.slideshow{
 	color: #fff;	
 	text-align: center;
 }
 
-.CSSgal .slider h2 {
+.slideshow .slider h2 {
 	margin-top: 40vh;
 	font-weight: 200;
 	letter-spacing: -0.06em;
@@ -130,7 +135,7 @@ http://stackoverflow.com/a/34696029/383904
 	font-size: 3em;
 }
 
-.CSSgal a {
+.slideshow a {
 	border-radius: 50%;
 	margin: 0 3px;
 	color: rgba(0,0,0,0.8);
