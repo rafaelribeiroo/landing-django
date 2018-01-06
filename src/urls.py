@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 from src.apps.newsletter import urls as newsletter_urls
 
 
@@ -22,4 +26,5 @@ app_name = 'core'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(newsletter_urls, namespace='core'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Utilizado para servir as midias do projeto

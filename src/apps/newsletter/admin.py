@@ -26,7 +26,7 @@ class dadosHomeAdmin(admin.ModelAdmin):
         model = dadosHome
 
     def show_img(self, obj):
-        return ", ".join([a.imagem for a in obj.newsletter.all()])
+        return '\n'.join([str(a.imagem) for a in obj.imagens.all()])
 
 
     #def has_add_permission(self, request):
