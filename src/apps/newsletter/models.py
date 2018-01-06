@@ -41,7 +41,7 @@ class Imagem(models.Model):
         verbose_name_plural = 'Imagens'
 
     def __str__(self):
-        return str(self.id)
+        return str(self.imagem)
 
 
 class dadosHome(models.Model):
