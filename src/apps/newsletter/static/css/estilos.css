@@ -85,6 +85,7 @@ body {
 	width: 100%;
 	text-align: center;
 }
+
 .slideshow .bullets > a {
 	display: inline-block;
 	width:       30px;
@@ -105,10 +106,10 @@ body {
 
 .slideshow > s:target ~ .bullets > * {      background: rgba(255, 255, 255, 0.5);}
 
-#s1:target ~ .bullets > *:nth-child(1) {background: rgba(255, 255, 255,   1);}
-#s2:target ~ .bullets > *:nth-child(2) {background: rgba(255, 255, 255,   1);}
-#s3:target ~ .bullets > *:nth-child(3) {background: rgba(255, 255, 255,   1);}
-#s4:target ~ .bullets > *:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s1:target ~ .bullets > *:nth-child(1) {background: rgba(255, 255, 255, 1);}
+#s2:target ~ .bullets > *:nth-child(2) {background: rgba(255, 255, 255, 1);}
+#s3:target ~ .bullets > *:nth-child(3) {background: rgba(255, 255, 255, 1);}
+#s4:target ~ .bullets > *:nth-child(4) {background: rgba(255, 255, 255, 1);}
 
 .slideshow >s:target ~ .prevNext > * { visibility: hidden;}
 
@@ -127,14 +128,14 @@ body {
 	text-align: center;
 }
 
-.slideshow .slider figcaption {
+.slideshow .slider > figcaption {
 	position: absolute;
 	margin-top: 20vh;
 	font-weight: 200;
 	letter-spacing: -0.06em;
 	word-spacing: 0.2em;
 	font-size: 3em;
-	color: black
+	color: #FFF
 }
 
 .slideshow .slider .img-responsive {
