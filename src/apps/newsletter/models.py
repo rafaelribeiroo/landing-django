@@ -17,9 +17,21 @@ class RandomFileName(object):
 
 class dadosHome(models.Model):
     imagem = models.ImageField(
-        upload_to=RandomFileName('landing_images'),
+        upload_to=RandomFileName('media/landing_img'),
+        verbose_name='Imagem do Carrossel',
+        editable=True,
+        height_field="image_height",
+        width_field="image_width",
         # default='media/default.png',
     )
+    image_height = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        editable=False)
+    image_width = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        editable=False)
     titulo_principal = models.CharField(
         'Título Principal',
         max_length=80,
