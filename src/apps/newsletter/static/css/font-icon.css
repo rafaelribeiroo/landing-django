@@ -11,16 +11,6 @@
     font-style: normal;
 }
 
-.icon {
-    /* margin: 0; */
-    /* margin-right: 10px; */
-    padding: 12px;
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    font-size: 24px
-}
-
 [data-icon]:before {
     font-family: "untitled-font-5" !important;
     content: attr(data-icon);

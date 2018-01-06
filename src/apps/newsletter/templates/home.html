@@ -5,47 +5,29 @@
 {% endblock %}
 
 {% block content %}
-	<header class="slideshow">
-		<!-- Don't wrap targets in parent -->
-		<span id="s1"></span> 
-		<span id="s2"></span>
-		<span id="s3"></span>
-		<span id="s4"></span>
-
-		<section class="slider">
-			<figure>
-				<img src="https://activeforlife.com/wp/wp-content/uploads/2015/11/mother-plays-with-active-son.jpg" class="img-responsive" />
-				<figcaption>Slide 1</figcaption>
-			</figure>
-			<figure>
-				<img src="https://www.infoescola.com/wp-content/uploads/2013/08/sol.jpg" class="img-responsive" />
-				<figcaption>Slide 2</figcaption>
-			</figure>
-			<figure>
-				<img src="http://www.ebony.com/wp-content/uploads/2016/07/m_179_original_45866-480x300.jpg" class="img-responsive" />
-				<figcaption>Slide 3</figcaption>
-			</figure>
-			<figure>
-				<img src="https://img.purch.com/h/1000/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAxOS8wOTEvb3JpZ2luYWwvanVseS1za3l3YXRjaGluZy1wb3J0bGFuZC5qcGc=" class="img-responsive" />
-				<figcaption>Slide 4</figcaption>
-			</figure>
-		</section>
-
-		<section class="prevNext">
-			<article><a href="#s4"><i data-icon="d" class="icon"></i></a><a href="#s2"><i data-icon="R" class="icon"></i></a></article>
-			<article><a href="#s1"><i data-icon="d" class="icon"></i></a><a href="#s3"><i data-icon="R" class="icon"></i></a></article>
-			<article><a href="#s2"><i data-icon="d" class="icon"></i></a><a href="#s4"><i data-icon="R" class="icon"></i></a></article>
-			<article><a href="#s3"><i data-icon="d" class="icon"></i></a><a href="#s1"><i data-icon="R" class="icon"></i></a></article>
-		</section>
-
-		<section class="bullets">
-			<a href="#s1">1</a>
-			<a href="#s2">2</a>
-			<a href="#s3">3</a>
-			<a href="#s4">4</a>
-		</section>
+	
+	<header>
+		<div class="logo"></div>
+		<div class="nav"></div>
 	</header>
 
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-	<script src='http://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js'></script>
+	<section class="slider">
+		<article class="arrows">
+			<a class="previous" href="#"><i data-icon="d" class="icon"></i></a>
+			<a class="next" href="#"><i data-icon="R" class="icon"></i></a>
+		</article>
+		<article class="slides">
+			<figure class="slide active">
+				<img src="https://static01.nyt.com/images/2017/08/15/insider/Eclipsing-the-Sun-Thmb2/Eclipsing-the-Sun-Thmb2-superJumbo.jpg">
+				<h2>Timezones</h2>
+			</figure>
+			<figure class="slide">
+			</figure>
+			<figure class="slide">
+				<img src="">
+			</figure>
+		</article>
+		<span class="bullets"></span>
+
+	</section>
 {% endblock %}
