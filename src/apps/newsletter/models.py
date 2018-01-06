@@ -15,9 +15,9 @@ class RandomFileName(object):
         return self.path % (uuid4(), extension)
 
 
-class dadosHome(models.Model):
+class Imagem(models.Model):
     imagem = models.ImageField(
-        upload_to=RandomFileName('media/landing_img'),
+        upload_to=RandomFileName('landing_img'),
         verbose_name='Imagem do Carrossel',
         editable=True,
         height_field="image_height",
@@ -27,11 +27,20 @@ class dadosHome(models.Model):
     image_height = models.PositiveIntegerField(
         null=True,
         blank=True,
-        editable=False)
+        editable=True
+    )
     image_width = models.PositiveIntegerField(
         null=True,
         blank=True,
-        editable=False)
+        editable=True
+    )
+
+    def __str__(self):
+        return self.imagem
+
+
+class dadosHome(models.Model):
+    imagens = models.ManyToManyField(Imagem, related_name='imagens_carrossel')
     titulo_principal = models.CharField(
         'Título Principal',
         max_length=80,

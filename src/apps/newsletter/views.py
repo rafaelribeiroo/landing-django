@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from .models import dadosHome
+
 
 def home(request):
-    return render(request, 'home.html')
+    info = dadosHome.objects.all()
+    return render(request, 'home.html', {'info': info})
