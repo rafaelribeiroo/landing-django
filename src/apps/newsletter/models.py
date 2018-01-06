@@ -1,11 +1,25 @@
 from django.db import models
+from django.utils.deconstruct import deconstructible
+
+import os
+from uuid import uuid4
+
+
+@deconstructible
+class RandomFileName(object):
+    def __init__(self, path):
+        self.path = os.path.join(path, "%s%s")
+
+    def __call__(self, _, filename):
+        extension = os.path.splitext(filename)[1]
+        return self.path % (uuid4(), extension)
 
 
 class dadosHome(models.Model):
     imagem = models.ImageField(
-    	upload_to='landing_images',
-    	#default='media/default.png'
-    	)
+        upload_to=RandomFileName('landing_images'),
+        # default='media/default.png',
+    )
     titulo_principal = models.CharField(
         'Título Principal',
         max_length=80,

@@ -7,9 +7,11 @@ run:
 
 migrate:
 	python manage.py migrate
+	python manage.py migrate newsletter
 
 migrations:
 	python manage.py makemigrations
+	python manage.py makemigrations newsletter
 
 user:
 	python manage.py createsuperuser
