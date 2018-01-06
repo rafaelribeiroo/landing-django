@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 	Página Principal || iClinic
@@ -12,33 +13,37 @@
 	</header>
 
 	<section class="slider">
+			
+		
 		<article class="arrows">
 			<a class="previous" href="#"><i data-icon="d" class="icon"></i></a>
 			<a class="next" href="#"><i data-icon="R" class="icon"></i></a>
 		</article>
 		<article class="slides">
 			<figure class="slide active">
-				<img src="https://static01.nyt.com/images/2017/08/15/insider/Eclipsing-the-Sun-Thmb2/Eclipsing-the-Sun-Thmb2-superJumbo.jpg">
+				<img src='{% static "" %}'>
 			</figure>
 			<figure class="slide">
+				<img src='{% static "" %}'>
 			</figure>
 			<figure class="slide">
 				<img src="">
 			</figure>
 		</article>
 		<span class="bullets"></span>
-
 	</section>
 	<section class="resto">
+		
+		{% for informacoes in info %}
 		<hgroup>
-			<h1 class="main-heading">The best system for clinics.</h1>
-			<span class="fancy"><h2 class="main-subtitle">Responsive Typography</h2></span>
+			<h1 class="main-heading">{{ informacoes.titulo_principal }}</h1>
+			<span class="fancy"><h2 class="main-subtitle">{{ informacoes.subtitulo }}</h2></span>
 		</hgroup>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem veniam doloribus accusantium quis excepturi odit, ea sunt eligendi in qui error facilis deleniti deserunt tenetur consectetur ullam id et a assumenda ex ratione, porro. Officiis quos maxime id totam voluptas veritatis aspernatur, aliquam pariatur nemo saepe temporibus animi quibusdam ut magni dolorem hic nihil ducimus nostrum earum quae asperiores exercitationem voluptate voluptatem. Voluptatum molestias, aliquam doloribus suscipit odit nemo rem tempore dolore ipsam. Dicta doloremque eveniet quibusdam id porro dolorum iure illum voluptates perferendis rerum suscipit animi, minus blanditiis odio ut corporis cumque reiciendis optio doloribus deserunt dolores sequi architecto.</p>
+		<p>{{ informacoes.texto }}</p>
 		<hgroup>
 			<h1 class="main-heading">Se inscreva para saber mais</h1>
 		</hgroup>
-
+		{% endfor %}
 		<div class="form">
 			<input type="text" maxlength="100" value="" pattern="[a-zA-Z_]+" required onkeyup="this.setAttribute('value', this.value);">
 			<label>Nome</label>
@@ -56,6 +61,7 @@
 			<label>Email</label>
 			<em>O mais utilizado por você</em>
 		</div>
+		
 	</section>
-
+	
 {% endblock %}

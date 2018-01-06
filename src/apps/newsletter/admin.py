@@ -27,3 +27,6 @@ class dadosHomeAdmin(admin.ModelAdmin):
 
     def imagens(self, obj):
         return ", ".join([imgs.imagem for imgs in obj.imagens.all()])
+
+    def has_add_permission(self, request):
+        return False
