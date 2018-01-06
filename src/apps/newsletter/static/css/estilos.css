@@ -21,7 +21,7 @@ body {
 /* SLIDER */
 
 .slideshow .slider {
-	height: 50%;
+	height: 70%;
 	white-space: nowrap;
 	font-size: 0;
 	transition: 0.8s;
@@ -45,7 +45,7 @@ body {
 .slideshow .prevNext {
 	position: absolute;
 	z-index: 999;
-	top: 50%;
+	top: 70%;
 	width: 100%;
 	height: 0;
 }
@@ -55,10 +55,10 @@ body {
 }
 
 .slideshow .prevNext a {
-	background: #333;
+	background: rgba(102, 102, 102, 0.5);
 	position: absolute;
-	width:       60px;
-	height:      60px;
+	width: 60px;
+	height: 60px;
 	line-height: 60px; /* If you want to place numbers */
 	text-align: center;
 	opacity: 0.7;
@@ -100,7 +100,7 @@ body {
 	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
 }
 .slideshow .bullets > a:hover {
-	background: rgba(255, 255, 255, 0.7) !important;
+	background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .slideshow > s:target ~ .bullets > * {      background: rgba(255, 255, 255, 0.5);}
@@ -140,6 +140,7 @@ body {
 .slideshow .slider .img-responsive {
 	width: 100%;
 	height: auto;
+	object-fit: cover;
 
 }
 
@@ -148,4 +149,9 @@ body {
 	margin: 0 3px;
 	color: rgba(0,0,0,0.8);
 	text-decoration: none;
+}
+
+.icon {
+	color: #FFD700;
+	vertical-align: middle;
 }
