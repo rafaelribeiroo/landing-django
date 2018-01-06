@@ -35,8 +35,13 @@ class Imagem(models.Model):
         editable=True
     )
 
+    class Meta:
+        ordering = ['imagem']
+        verbose_name = 'Imagem'
+        verbose_name_plural = 'Imagens'
+
     def __str__(self):
-        return self.imagem
+        return str(self.id)
 
 
 class dadosHome(models.Model):

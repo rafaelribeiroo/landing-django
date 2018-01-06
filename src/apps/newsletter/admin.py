@@ -16,10 +16,10 @@ class ImagemAdmin(admin.ModelAdmin):
 
 @admin.register(dadosHome)
 class dadosHomeAdmin(admin.ModelAdmin):
-    fields = ['imagem', 'image_height', 'image_width', 'titulo_principal', 'subtitulo', 'texto']
-    list_display = ['imagem', 'titulo_principal', 'subtitulo', 'texto']
-    list_filter = ['imagem', 'titulo_principal', 'subtitulo', 'texto']
-    search_fields = ['imagem', 'titulo_principal', 'subtitulo', 'texto']
+    fields = ['imagens', 'titulo_principal', 'subtitulo', 'texto']
+    list_display = ['titulo_principal', 'subtitulo', 'texto']
+    list_filter = ['titulo_principal', 'subtitulo', 'texto']
+    search_fields = ['titulo_principal', 'subtitulo', 'texto']
     save_on_top = True
 
     class Meta:
