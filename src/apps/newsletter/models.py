@@ -63,6 +63,9 @@ class dadosHome(models.Model):
         max_length=1500,
         null=False,
         blank=False)
+    inscreva = models.CharField(
+        'Apelo chamativo para o usuário se inscrever',
+        max_length=30)
     data_modificacao = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:

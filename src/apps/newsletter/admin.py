@@ -16,7 +16,7 @@ class ImagemAdmin(admin.ModelAdmin):
 
 @admin.register(dadosHome)
 class dadosHomeAdmin(admin.ModelAdmin):
-    fields = ['titulo_principal', 'subtitulo', 'texto', 'imagens']
+    fields = ['imagens', 'titulo_principal', 'subtitulo', 'texto', 'inscreva']
     list_display = ['titulo_principal', 'subtitulo', 'texto']
     list_filter = ['titulo_principal', 'subtitulo', 'texto']
     search_fields = ['titulo_principal', 'subtitulo', 'texto']
@@ -27,6 +27,7 @@ class dadosHomeAdmin(admin.ModelAdmin):
 
     #def has_add_permission(self, request):
     #    return False
+
 
 @admin.register(Unir)
 class UnirAdmin(admin.ModelAdmin):
