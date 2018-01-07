@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Sitemaps, SEO
     'django.contrib.sitemaps',
+    # 3rd. apps
+    'froala_editor',
 
     # My apps
     'src.apps.newsletter',
@@ -133,3 +135,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+FROALA_INCLUDE_JQUERY = True

@@ -1,4 +1,5 @@
 Django==2.0.1
+django-froala-editor==2.7.3
 Pillow==5.0.0
 psycopg2==2.7.3.2
 python-decouple==3.1

@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.deconstruct import deconstructible
 
+from froala_editor.fields import FroalaField
+
 import os
 from uuid import uuid4
 
@@ -58,11 +60,7 @@ class dadosHome(models.Model):
         'Subtítulo',
         max_length=80,
         null=False)
-    texto = models.CharField(
-        'Inclua o texto',
-        max_length=1500,
-        null=False,
-        blank=False)
+    texto = FroalaField(max_length=1500, verbose_name='Texto')
     inscreva = models.CharField(
         'Apelo chamativo para o usuário se inscrever',
         max_length=30)

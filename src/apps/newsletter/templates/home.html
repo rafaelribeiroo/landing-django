@@ -45,7 +45,7 @@
 			<h1 class="main-heading">{{ informacoes.titulo_principal }}</h1>
 			<span class="fancy"><h2 class="main-subtitle">{{ informacoes.subtitulo }}</h2></span>
 		</hgroup>
-		<p>{{ informacoes.texto }}</p>
+		{{ informacoes.texto|safe }}
 		<hgroup>
 			<h1 class="main-heading">{{ informacoes.inscreva }}</h1>
 		</hgroup>
