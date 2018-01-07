@@ -10,14 +10,14 @@
 {% endblock %}
 
 {% block content %}
-	
+	{% for informacoes in info %}
 	<header>
 		<div class="logo"></div>
 		<div class="nav"></div>
 	</header>
 
 	<section class="slider">
-		{% for informacoes in info %}
+		
 		
 		<article class="arrows">
 			<a class="previous" href="#"><i data-icon="d" class="icon"></i></a>
@@ -49,25 +49,34 @@
 		<hgroup>
 			<h1 class="main-heading">Se inscreva para saber mais</h1>
 		</hgroup>
-		{% endfor %}
-		<div class="form">
-			<input type="text" maxlength="100" value="" pattern="[a-zA-Z_]+" required onkeyup="this.setAttribute('value', this.value);">
-			<label>Nome</label>
-			<em>Como quer ser chamado?</em>
-		</div>
+		<form method='POST'>
+			{% csrf_token %}
+			<div class="form">
+				<input 
+					type="text" 
+					name="{{ form.name.name }}"
+					maxlength="100" 
+					value="{{ value }}" 
+					pattern="[a-zA-Z_]+"
+				/>
+				<label>Nome</label>
+				<em>Como quer ser chamado?</em>
+			</div>
 
-		<div class="form">
-			<input
-				type="email"
-				maxlength="100"
-				value=""
-				pattern="[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2,3}"
-				required
-			/>
-			<label>Email</label>
-			<em>O mais utilizado por você</em>
-		</div>
+			<div class="form">
+				<input
+					type="email"
+					name="{{ form.email.name }}"
+					maxlength="100"
+					value="{{ value }}"
+					pattern="[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2,3}"
+					required
+				/>
+				<label>Email</label>
+				<em>O mais utilizado por você</em>
+			</div>
+		</form>
 		
 	</section>
-	
+	{% endfor %}
 {% endblock %}

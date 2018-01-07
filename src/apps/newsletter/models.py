@@ -23,7 +23,6 @@ class Imagem(models.Model):
         width_field="image_width",
         null=False,
         blank=False,
-        unique=True
         # default='media/default.png',
     )
     image_height = models.PositiveIntegerField(
@@ -76,3 +75,17 @@ class dadosHome(models.Model):
 
     def get_absolute_url(self):
         return '/post/{}/'.format(self.pk)
+
+
+class Unir(models.Model):
+    name = models.CharField('Nome', max_length=20, unique=True)
+    email = models.EmailField('E-mail', unique=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = 'Juntar'
+        verbose_name_plural = 'Juntar'
+
+    def __str__(self):
+        return self.email

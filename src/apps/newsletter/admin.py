@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import dadosHome, Imagem
+from .models import dadosHome, Imagem, Unir
 
 
 @admin.register(Imagem)
@@ -27,3 +27,16 @@ class dadosHomeAdmin(admin.ModelAdmin):
 
     #def has_add_permission(self, request):
     #    return False
+
+@admin.register(Unir)
+class UnirAdmin(admin.ModelAdmin):
+    fields = ['name', 'email']
+    list_display = ['name', 'email', 'timestamp']
+    list_filter = ['name', 'email', 'timestamp']
+    search_fields = ['name', 'email', 'timestamp']
+
+    class Meta:
+        model = dadosHome
+
+    def has_add_permission(self, request):
+        return False

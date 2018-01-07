@@ -17,7 +17,7 @@ user:
 	python manage.py createsuperuser
 
 test:
-	python manage.py test newsletter
+	python manage.py test src.apps.newsletter
 
 shell:
 	python manage.py shell

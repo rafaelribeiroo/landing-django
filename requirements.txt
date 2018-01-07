@@ -1,5 +1,4 @@
 Django==2.0.1
-model-mommy==1.5.0
 Pillow==5.0.0
 psycopg2==2.7.3.2
 python-decouple==3.1
