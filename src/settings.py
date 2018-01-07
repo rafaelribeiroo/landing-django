@@ -29,6 +29,11 @@ DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['landing-django.herokuapp.com', '.landing-django.com']
 
+ADMINS = [
+    ('Rafael Ribeiro', 'pereiraribeirorafael@gmail.com')
+]
+
+MANAGERS = ADMINS
 
 # Application definition
 
