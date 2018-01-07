@@ -60,6 +60,7 @@ class dadosHome(models.Model):
         max_length=1500,
         null=False,
         blank=False)
+    data_modificacao = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
         ordering = ['titulo_principal']
@@ -68,3 +69,6 @@ class dadosHome(models.Model):
 
     def __str__(self):
         return self.titulo_principal
+
+    def get_absolute_url(self):
+        return '/post/{}/'.format(self.pk)

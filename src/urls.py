@@ -16,15 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Habilitar MEDIA
 from django.conf import settings
 from django.conf.urls.static import static
 
+# Multiplas URLS
 from src.apps.newsletter import urls as newsletter_urls
+
+# Sitemaps, SEO
+from django.contrib.sitemaps.views import sitemap
+from src.apps.newsletter.views import dadosHomeSitemap
+
+sitemaps = {
+    'post': dadosHomeSitemap,
+}
 
 
 app_name = 'core'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(newsletter_urls, namespace='core'))
+    path('', include(newsletter_urls, namespace='core')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # Utilizado para servir as midias do projeto

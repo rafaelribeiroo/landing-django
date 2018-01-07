@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Sitemaps, SEO
+    'django.contrib.sitemaps',
 
     # My apps
     'src.apps.newsletter',
