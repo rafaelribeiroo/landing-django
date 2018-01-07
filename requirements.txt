@@ -1,7 +1,13 @@
+dj-database-url==0.4.2
+dj-static==0.0.6
 Django==2.0.1
 django-froala-editor==2.7.3
+django-toolbelt==0.0.1
+gunicorn==19.7.1
 Pillow==5.0.0
 psycopg2==2.7.3.2
 python-decouple==3.1
 pytz==2017.3
 six==1.11.0
+static3==0.7.0
+whitenoise==3.3.1
