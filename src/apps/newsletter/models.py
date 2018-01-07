@@ -19,20 +19,20 @@ class Imagem(models.Model):
     imagem = models.ImageField(
         upload_to=RandomFileName('landing_img'),
         verbose_name='Imagem do Carrossel',
-        editable=True,
         height_field="image_height",
         width_field="image_width",
+        null=False,
+        blank=False,
+        unique=True
         # default='media/default.png',
     )
     image_height = models.PositiveIntegerField(
         null=True,
         blank=True,
-        editable=True
     )
     image_width = models.PositiveIntegerField(
         null=True,
         blank=True,
-        editable=True
     )
 
     class Meta:

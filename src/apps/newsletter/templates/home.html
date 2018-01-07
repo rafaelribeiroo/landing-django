@@ -13,28 +13,30 @@
 	</header>
 
 	<section class="slider">
-			
+		{% for informacoes in info %}
 		
 		<article class="arrows">
 			<a class="previous" href="#"><i data-icon="d" class="icon"></i></a>
 			<a class="next" href="#"><i data-icon="R" class="icon"></i></a>
 		</article>
 		<article class="slides">
-			<figure class="slide active">
-				<img src='{% static "" %}'>
-			</figure>
-			<figure class="slide">
-				<img src='{% static "" %}'>
-			</figure>
-			<figure class="slide">
-				<img src="">
-			</figure>
+			{% for i in informacoes.imagens.all %}
+				{% if forloop.counter == 1 %}
+					<figure class="slide active">
+						<img src='media/{{ i }}'>
+					</figure>
+				{% else %}
+					<figure class="slide">
+						<img src='media/{{ i }}'>
+					</figure>
+				{% endif %}	
+			{% endfor %}
 		</article>
 		<span class="bullets"></span>
 	</section>
 	<section class="resto">
 		
-		{% for informacoes in info %}
+		
 		<hgroup>
 			<h1 class="main-heading">{{ informacoes.titulo_principal }}</h1>
 			<span class="fancy"><h2 class="main-subtitle">{{ informacoes.subtitulo }}</h2></span>

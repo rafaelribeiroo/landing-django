@@ -16,18 +16,14 @@ class ImagemAdmin(admin.ModelAdmin):
 
 @admin.register(dadosHome)
 class dadosHomeAdmin(admin.ModelAdmin):
-    fields = ['show_img', 'titulo_principal', 'subtitulo', 'texto']
-    list_display = ['show_img', 'titulo_principal', 'subtitulo', 'texto']
+    fields = ['titulo_principal', 'subtitulo', 'texto', 'imagens']
+    list_display = ['titulo_principal', 'subtitulo', 'texto']
     list_filter = ['titulo_principal', 'subtitulo', 'texto']
     search_fields = ['titulo_principal', 'subtitulo', 'texto']
     save_on_top = True
 
     class Meta:
         model = dadosHome
-
-    def show_img(self, obj):
-        return '\n'.join([str(a.imagem) for a in obj.imagens.all()])
-
 
     #def has_add_permission(self, request):
     #    return False
