@@ -201,7 +201,7 @@ hgroup {
 	letter-spacing: -1px;
 }
 
-textarea:focus, input:focus{
+textarea:focus, input:focus, button:focus {
 	outline: none;
 }
 
@@ -271,6 +271,8 @@ input:not([value=""]):not(.input_search):disabled + label + em {
  */
 .button {
 	position: relative;
+	border: none;
+	cursor: pointer;
 	display: block;
 	overflow: hidden;
 	margin: 0 auto;

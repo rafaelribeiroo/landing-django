@@ -10,7 +10,7 @@ def home(request):
     if request.method == 'POST':
         form = UnirForm(request.POST or None)
         if form.is_valid():
-            form = form.save(commit=True)
+            form = form.save()
         return HttpResponseRedirect('/')
     else:
         form = UnirForm()

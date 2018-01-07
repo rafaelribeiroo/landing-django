@@ -15,5 +15,6 @@ class UnirForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         us = Unir.objects.filter(email__iexact=email)
         if us.exists():
+            print('Existente')
             raise forms.ValidationError('Esse e-mail já existe')
-        return email, name
+        return email
