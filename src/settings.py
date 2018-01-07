@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 from decouple import config as config_decouple
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +25,9 @@ SECRET_KEY = config_decouple('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config_decouple('DEBUG', default=True, cast=bool)
+DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['landing.herokuapp.com', '.landing.com']
 
 
 # Application definition
@@ -133,9 +135,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Editor WYSIWYG
 FROALA_INCLUDE_JQUERY = True
 
+# Validação: "Eu sou um robô?"
 GOOGLE_RECAPTCHA_SECRET_KEY = config_decouple('GOOGLE_RECAPTCHA_SECRET_KEY')
+
+# Heroku
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+HOST_SCHEME = "https://"
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
