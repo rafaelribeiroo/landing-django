@@ -94,7 +94,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Padrão
         # 'django.db.backends.postgresql_psycopg2'
         'NAME': config_decouple('DB_NAME'),  # Nome do seu banco
-        'CONN_MAX_AGE': 600,  # Para setar a persistência de conexão para 60seg
         'USER': config_decouple('DB_USER'),  # Seu usuário
         'PASSWORD': config_decouple('DB_PASSWORD'),  # Sua senha
         'HOST': config_decouple('DB_HOST'),  # inet end
