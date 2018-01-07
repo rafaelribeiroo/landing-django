@@ -34,6 +34,7 @@ class Imagem(models.Model):
         null=True,
         blank=True,
     )
+    data = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
         ordering = ['imagem']
@@ -42,6 +43,9 @@ class Imagem(models.Model):
 
     def __str__(self):
         return str(self.imagem)
+
+    def get_absolute_url(self):
+        return '/post/{}/'.format(self.pk)
 
 
 class dadosHome(models.Model):

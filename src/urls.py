@@ -25,10 +25,11 @@ from src.apps.newsletter import urls as newsletter_urls
 
 # Sitemaps, SEO
 from django.contrib.sitemaps.views import sitemap
-from src.apps.newsletter.views import dadosHomeSitemap
+from src.apps.newsletter.views import dadosHomeSitemap, imagemSitemap
 
 sitemaps = {
     'post': dadosHomeSitemap,
+    'post_img': imagemSitemap,
 }
 
 
