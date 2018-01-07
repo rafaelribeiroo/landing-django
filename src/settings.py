@@ -137,3 +137,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FROALA_INCLUDE_JQUERY = True
+
+GOOGLE_RECAPTCHA_SECRET_KEY = config_decouple('GOOGLE_RECAPTCHA_SECRET_KEY')

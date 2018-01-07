@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-	{% for informacoes in info %}
+	{% for informacoes in dados %}
 	<header>
 		<div class="logo"></div>
 		<div class="nav"></div>
@@ -48,6 +48,7 @@
 		{{ informacoes.texto|safe }}
 		<hgroup>
 			<h1 class="main-heading">{{ informacoes.inscreva }}</h1>
+			<p>Todos os inputs são exigidos</p>
 		</hgroup>
 		<form method='POST'>
 			{% csrf_token %}
@@ -58,9 +59,10 @@
 					maxlength="100" 
 					value="{{ value }}" 
 					pattern="[a-zA-Z_]+"
+					required 
 				/>
 				<label>Nome</label>
-				<em>Como quer ser chamado?</em>
+				<em>Apenas o primeiro nome</em>
 			</div>
 
 			<div class="form">
@@ -75,6 +77,16 @@
 				<label>Email</label>
 				<em>O mais utilizado por você</em>
 			</div>
+			{{ form.messages.errors }}
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+			<div class="form">
+				<div 
+					class="g-recaptcha" 
+					data-sitekey="6LcVoj8UAAAAADXf4uA-xqUaQeSjGxb8BHAprLJZ">
+						
+				</div>
+			</div>
+
 			<button type="submit" class="button"><span><i data-icon="&#xe006;" class="icon submit"></i></span></button>
 		</form>
 		

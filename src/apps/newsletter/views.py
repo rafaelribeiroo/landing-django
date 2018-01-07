@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import dadosHome
 
+# Imports do Newsletter
 from .forms import UnirForm
-from django.http import HttpResponseRedirect
+# from django.http import HttpResponseRedirect
+
+# Imports do Google Key
+from django.conf import settings
+from django.contrib import messages
+import urllib
+import json
 
 
 def home(request):
@@ -10,13 +17,29 @@ def home(request):
     if request.method == 'POST':
         form = UnirForm(request.POST or None)
         if form.is_valid():
-            form = form.save()
-        return HttpResponseRedirect('/')
+            ''' Começo da validação reCAPTCHA '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response,
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req = urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            ''' Final da reCAPTCHA '''
+            if result['success']:
+                form = form.save()
+                messages.success(request, 'Contato cadastrado com sucesso!')
+            else:
+                messages.error(request, 'reCAPTCHA inválido. Por favor, tente novamente')
+            return redirect('core:homepage')
     else:
         form = UnirForm()
 
     context = {
-        'info': info,
+        'dados': info,
         'form': form,
     }
     return render(request, 'home.html', context)
