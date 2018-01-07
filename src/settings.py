@@ -27,7 +27,7 @@ SECRET_KEY = config_decouple('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['landing.herokuapp.com', '.landing.com']
+ALLOWED_HOSTS = ['landing-django.herokuapp.com', '.landing-django.com']
 
 
 # Application definition
@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'src.urls'
@@ -152,3 +153,5 @@ DATABASES['default'].update(db_from_env)
 
 HOST_SCHEME = "https://"
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
