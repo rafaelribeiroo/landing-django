@@ -25,7 +25,7 @@ SECRET_KEY = config_decouple('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config_decouple('DEBUG', default=False, cast=bool)
+DEBUG = config_decouple('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = ['landing-django.herokuapp.com', '.landing-django.com']
 
