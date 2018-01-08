@@ -12,10 +12,9 @@ import os
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 from whitenoise.django import DjangoWhiteNoise
-from rednoise import DjangoRedNoise
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.settings")
 
-application = get_wsgi_application()
-application = DjangoRedNoise(application)
+application = Cling(get_wsgi_application())
+application = DjangoWhiteNoise(application)
