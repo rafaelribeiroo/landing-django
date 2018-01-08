@@ -17,5 +17,5 @@ from rednoise import DjangoRedNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.settings")
 
-application = Cling(get_wsgi_application())
+application = get_wsgi_application()
 application = DjangoRedNoise(application)
