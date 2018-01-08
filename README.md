@@ -2,6 +2,8 @@
 
 Um criador de landing-pages feito em Django 2.1
 
+* [LIVE DEMO](https://landing-django.herokuapp.com/)
+
 ## Getting Started
 
 As instruções a seguir vai ajudá-los a baixar e ter uma cópia do projeto em sua máquina local para prosseguir com o desenvolvimento.
