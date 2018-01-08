@@ -25,7 +25,7 @@ SECRET_KEY = config_decouple('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config_decouple('DEBUG', default=True, cast=bool)
+DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['landing-django.herokuapp.com', '.landing-django.com']
 
@@ -158,4 +158,4 @@ DATABASES['default'].update(db_from_env)
 HOST_SCHEME = "https://"
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
