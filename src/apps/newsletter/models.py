@@ -1,10 +1,9 @@
 from django.db import models
-from django.utils.deconstruct import deconstructible
-
 from froala_editor.fields import FroalaField
 
 import os
 from uuid import uuid4
+from django.utils.deconstruct import deconstructible
 
 
 @deconstructible

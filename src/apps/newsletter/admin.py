@@ -26,7 +26,7 @@ class dadosHomeAdmin(admin.ModelAdmin):
         model = dadosHome
 
     def has_add_permission(self, request):
-        return False
+       return False
 
 
 @admin.register(Unir)

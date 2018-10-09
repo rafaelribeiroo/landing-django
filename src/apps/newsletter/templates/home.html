@@ -27,11 +27,11 @@
 			{% for i in informacoes.imagens.all %}
 				{% if forloop.counter == 1 %}
 					<figure class="slide active">
-						<img src='media/{{ i }}'>
+						<img src='{{ aws }}/{{ i }}'>
 					</figure>
 				{% else %}
 					<figure class="slide">
-						<img src='media/{{ i }}'>
+						<img src='{{ aws }}/{{ i }}'>
 					</figure>
 				{% endif %}	
 			{% endfor %}
