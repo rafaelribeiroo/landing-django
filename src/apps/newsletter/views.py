@@ -11,6 +11,8 @@ from django.contrib import messages
 import urllib
 import json
 
+from src.settings import AWS_S3_CUSTOM_DOMAIN
+
 
 def home(request):
     info = dadosHome.objects.all()
@@ -41,5 +43,6 @@ def home(request):
     context = {
         'dados': info,
         'form': form,
+        'aws': AWS_S3_CUSTOM_DOMAIN,
     }
     return render(request, 'home.html', context)
