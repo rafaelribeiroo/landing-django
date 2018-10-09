@@ -1,9 +1,31 @@
 from django.db import models
 from froala_editor.fields import FroalaField
 
+import os
+from uuid import uuid4
+from django.utils.deconstruct import deconstructible
+
+
+@deconstructible
+class RandomFileName(object):
+    def __init__(self, path):
+        self.path = os.path.join(path, "%s%s")
+
+    def __call__(self, _, filename):
+        extension = os.path.splitext(filename)[1]
+        return self.path % (uuid4(), extension)
+
 
 class Imagem(models.Model):
-    imagem = models.ImageField()
+    imagem = models.ImageField(
+        upload_to=RandomFileName('landing_img'),
+        verbose_name='Imagem do Carrossel',
+        height_field="image_height",
+        width_field="image_width",
+        null=False,
+        blank=False,
+        # default='media/default.png',
+    )
     image_height = models.PositiveIntegerField(
         null=True,
         blank=True,

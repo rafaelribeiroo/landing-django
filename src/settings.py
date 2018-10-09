@@ -166,6 +166,9 @@ AWS_ACCESS_KEY_ID = config_decouple('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config_decouple('AWS_SECRET_ACCESS_KEY')
 AWS_AUTO_CREATE_BUCKET = True
 AWS_STORAGE_BUCKET_NAME = 'landing-media'
+# https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl
+AWS_DEFAULT_ACL = 'bucket-owner-full-control'
+# AWS_S3_REGION_NAME = "us-west-2"
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 AWS_S3_OBJECT_PARAMETERS = {
