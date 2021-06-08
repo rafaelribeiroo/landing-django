@@ -9,7 +9,7 @@ django-toolbelt==0.0.1
 docutils==0.14
 gunicorn==19.7.1
 jmespath==0.9.3
-Pillow==5.0.0
+Pillow==8.2.0
 psycopg2==2.7.3.2
 python-dateutil==2.7.3
 python-decouple==3.1
